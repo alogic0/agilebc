@@ -48,3 +48,5 @@ numOrStar :: RE Char NumOrStar
 numOrStar = (Num <$> number) <|> star
 
 entry = mkTime <$> many (numOrStar <* many (psym isSpace))
+    where
+    mkTime [s,m,h] = MakeTime s m h
