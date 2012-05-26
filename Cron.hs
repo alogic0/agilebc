@@ -34,7 +34,7 @@ cron currentTime time action = do
     when (checkTime currentTime $ readEntry time) $
         action
     sleep 1
-    cron time action
+    cron (currentTime) time action
 
 testTimeSpec = MakeTime Star (Num 56) (Num 12)
 
