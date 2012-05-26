@@ -32,13 +32,14 @@ checkTime currentTime time =
 
 cron :: String -> IO ()
 cron time = do
+    let timeStruct = readEntry time
     currentTime <- getZonedTime
     cron' currentTime time
   where
   cron' currentTime time = do
     -- currentTime <- getZonedTime
-    when (checkTime currentTime $ readEntry time) $
-        (system $ cmd time)
+    when (checkTime currentTime timeStruct) $
+        (system $ cmd timeStruct)
     sleep 1
     cron' (modL seconds (+1) currentTime) time
 
