@@ -41,4 +41,4 @@ number :: RE Char Int
 number = read <$> many (psym isDigit)
 
 star :: RE Char NumOrStar
-star = (const Star) <$> sym '*'
+star = (\x -> Star) <$> sym '*'
