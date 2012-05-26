@@ -1,1 +1,2 @@
 module Test where
+foo
