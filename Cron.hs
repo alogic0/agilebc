@@ -10,6 +10,8 @@ data Time a = MakeTime
     }
     deriving Show
 
+data NumOrStar = Num Int
+
 sleep n = threadDelay (n * 10^6)
 
 checkTime :: ZonedTime -> Time Int -> Bool
