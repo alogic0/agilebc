@@ -12,7 +12,7 @@ data Time = MakeTime
 
 sleep n = threadDelay (n * 10^6)
 
-checkTime 
+checkTime :: ZonedTime -> Time -> Bool
 
 cron :: Time -> IO () -> IO ()
 cron time action = do
