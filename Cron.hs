@@ -10,7 +10,7 @@ data Time a = MakeTime
     }
     deriving Show
 
-data NumOrStar = Num Int
+data NumOrStar = Num Int | Star
 
 sleep n = threadDelay (n * 10^6)
 
