@@ -52,5 +52,5 @@ entry = mkTime <$> many (numOrStar <* many (psym isSpace))
     where
     mkTime [s,m,h] = MakeTime s m h
 
-readEntry :: String -> Time numOrStar
+readEntry :: String -> Time NumOrStar
 readEntry s = fromJust $ s =~ entry
