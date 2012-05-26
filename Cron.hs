@@ -9,7 +9,7 @@ data Time = MakeTime
 
 sleep n = threadDelay (n * 10^6)
 
-cron action = do
+cron time action = do
     action
     sleep 1
     cron action
