@@ -4,4 +4,5 @@ sleep n = threadDelay (n * 10^6)
 
 hello = do
     putStrLn "Hello #agilebc!"
+    sleep 1
     hello
