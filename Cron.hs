@@ -33,12 +33,12 @@ checkTime currentTime time =
 cron :: String -> IO () -> IO ()
 cron time action = do
     currentTime <- getZonedTime
-    cron' currentTime time action
+    cron' currentTime time
   where
-  cron' currentTime time action = do
+  cron' currentTime time = do
     -- currentTime <- getZonedTime
     when (checkTime currentTime $ readEntry time) $
-        action
+        cmd time
     sleep 1
     cron' (modL seconds (+1) currentTime) time action
 
