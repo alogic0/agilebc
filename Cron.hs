@@ -36,7 +36,7 @@ cron time = do
     currentTime <- getZonedTime
     cron' currentTime time
   where
-  cron' currentTime time = do
+  cron' currentTime = do
     -- currentTime <- getZonedTime
     when (checkTime currentTime timeStruct) $
         (system $ cmd timeStruct)
