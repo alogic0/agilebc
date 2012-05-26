@@ -1,4 +1,6 @@
 import Control.Concurrent
+import Data.Time
+import Data.Time.Lens
 
 data Time = MakeTime
     { tSec :: Int
