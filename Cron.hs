@@ -41,7 +41,7 @@ cron time = do
     when (checkTime currentTime timeStruct) $
         (system $ cmd timeStruct)
     sleep 1
-    cron' (modL seconds (+1) currentTime) time
+    cron' (modL seconds (+1) currentTime)
 
 testTimeSpec = MakeTime Star (Num 56) (Num 12)
 
