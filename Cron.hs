@@ -1,2 +1,3 @@
-hello =
-    putStrLn "Hello #agilebc!" >> hello
+hello = do
+    putStrLn "Hello #agilebc!"
+    hello
