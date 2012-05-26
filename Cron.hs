@@ -38,7 +38,7 @@ cron time action = do
   cron' currentTime time = do
     -- currentTime <- getZonedTime
     when (checkTime currentTime $ readEntry time) $
-        cmd time
+        system $ cmd time
     sleep 1
     cron' (modL seconds (+1) currentTime) time action
 
