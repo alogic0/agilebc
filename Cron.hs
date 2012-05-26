@@ -47,4 +47,4 @@ star = Star <$ sym '*'
 numOrStar :: RE Char NumOrStar
 numOrStar = (Num <$> number) <|> star
 
-
+entry = many (numOrStar <* many (psym isSpace))
