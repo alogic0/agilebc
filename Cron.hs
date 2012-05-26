@@ -3,10 +3,10 @@ import Data.Time
 import Data.Time.Lens
 import Control.Monad
 
-data Time = MakeTime
-    { tSec :: Int
-    , tMin :: Int
-    , tHour :: Int
+data Time a = MakeTime
+    { tSec :: a
+    , tMin :: a
+    , tHour :: a
     }
     deriving Show
 
