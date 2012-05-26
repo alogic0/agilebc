@@ -4,6 +4,7 @@ import Data.Time.Lens
 import Control.Monad
 import Text.Regex.Applicative
 import Data.Char
+import Data.Maybe
 
 data Time a = MakeTime
     { tSec :: a
