@@ -47,6 +47,6 @@ star = Star <$ sym '*'
 numOrStar :: RE Char NumOrStar
 numOrStar = (Num <$> number) <|> star
 
-entry = mkTime <$> many (numOrStar <* many (psym isSpace))
+entry = fromJust $ mkTime <$> many (numOrStar <* many (psym isSpace))
     where
     mkTime [s,m,h] = MakeTime s m h
