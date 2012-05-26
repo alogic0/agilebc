@@ -43,4 +43,7 @@ number = read <$> many (psym isDigit)
 star :: RE Char NumOrStar
 star = Star <$ sym '*'
 
+NumOrStar :: RE Char NumOrStar
 numOrStar = (Num <$> number) <|> star
+
+
