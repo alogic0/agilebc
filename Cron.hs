@@ -21,7 +21,7 @@ checkTime currentTime time =
 cron :: Time -> IO () -> IO ()
 cron time action = do
     currentTime <- getZonedTime
-    when () $
+    when (checkTime currentTime time) $
         action
     sleep 1
     cron time action
