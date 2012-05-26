@@ -5,6 +5,7 @@ import Control.Monad
 import Text.Regex.Applicative
 import Data.Char
 import Data.Maybe
+import System.Process
 
 data Time a = MakeTime
     { tSec :: a
