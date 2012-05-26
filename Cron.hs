@@ -39,7 +39,7 @@ cron time = do
   cron' currentTime timeStruct = do
     -- currentTime <- getZonedTime
     when (checkTime currentTime timeStruct) $
-        (system $ cmd timeStruct)
+        (void $ system $ cmd timeStruct)
     sleep 1
     cron' (modL seconds (+1) currentTime) timeStruct
 
