@@ -39,3 +39,6 @@ testTimeSpec = MakeTime Star (Num 56) (Num 12)
 -- Parsing
 number :: RE Char Int
 number = read <$> many (psym isDigit)
+
+star :: RE Char NumOrStar
+star = Star <$ sym '*'
