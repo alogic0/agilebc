@@ -20,9 +20,9 @@ n === Num m = n == m
 
 checkTime :: ZonedTime -> Time NumOrStar -> Bool
 checkTime currentTime time =
-    round (getL seconds currentTime) == tSec time &&
-    getL minutes currentTime == tMin time &&
-    getL hours currentTime == tHour time
+    round (getL seconds currentTime) === tSec time &&
+    getL minutes currentTime === tMin time &&
+    getL hours currentTime === tHour time
 
 cron :: Time NumOrStar -> IO () -> IO ()
 cron time action = do
