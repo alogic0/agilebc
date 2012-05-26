@@ -14,8 +14,7 @@ sleep n = threadDelay (n * 10^6)
 
 cron time action = do
     currentTime <- getZonedTime
-    {- if getL seconds currentTime == tSec time
-        then action
-        else return () -}
+    when (if getL seconds currentTime == tSec time) $
+        action
     sleep 1
     cron time action
