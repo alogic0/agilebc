@@ -14,7 +14,7 @@ data NumOrStar = Num Int | Star
 
 sleep n = threadDelay (n * 10^6)
 
-checkTime :: ZonedTime -> Time Int -> Bool
+checkTime :: ZonedTime -> Time NumOrStar -> Bool
 checkTime currentTime time =
     round (getL seconds currentTime) == tSec time &&
     getL minutes currentTime == tMin time &&
