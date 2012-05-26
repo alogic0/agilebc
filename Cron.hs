@@ -29,7 +29,8 @@ checkTime currentTime time =
     getL hours currentTime ==* tHour time
 
 cron :: String -> IO () -> IO ()
-cron 
+cron = do
+    currentTime <- getZonedTime
   where
   cron' currentTime time action = do
     -- currentTime <- getZonedTime
