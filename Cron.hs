@@ -32,4 +32,4 @@ cron time action = do
     sleep 1
     cron time action
 
-
+testTimeSpec = MakeTime Star 56 12
