@@ -11,6 +11,7 @@ data Time a = MakeTime
     { tSec :: a
     , tMin :: a
     , tHour :: a
+    , cmd :: String
     }
     deriving Show
 
