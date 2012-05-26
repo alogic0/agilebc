@@ -28,10 +28,10 @@ checkTime currentTime time =
     getL minutes currentTime ==* tMin time &&
     getL hours currentTime ==* tHour time
 
-cron :: Time NumOrStar -> IO () -> IO ()
+cron :: String -> IO () -> IO ()
 cron time action = do
     currentTime <- getZonedTime
-    when (checkTime currentTime time) $
+    when (checkTime currentTime $ readEntry time) $
         action
     sleep 1
     cron time action
