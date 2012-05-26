@@ -36,12 +36,12 @@ cron time = do
     currentTime <- getZonedTime
     cron' currentTime time
   where
-  cron' currentTime = do
+  cron' currentTime timeStruct = do
     -- currentTime <- getZonedTime
     when (checkTime currentTime timeStruct) $
         (system $ cmd timeStruct)
     sleep 1
-    cron' (modL seconds (+1) currentTime)
+    cron' (modL seconds (+1) currentTime) timeStruct
 
 testTimeSpec = MakeTime Star (Num 56) (Num 12)
 
