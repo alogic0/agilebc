@@ -13,7 +13,7 @@ data Time = MakeTime
 sleep n = threadDelay (n * 10^6)
 
 checkTime :: ZonedTime -> Time -> Bool
-checkTime =
+checkTime currentTime time =
     round (getL seconds currentTime) == tSec time &&
     getL minutes currentTime == tMin time &&
     getL hour currentTime == tHour time
