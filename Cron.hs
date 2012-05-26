@@ -5,6 +5,7 @@ data Time = MakeTime
     , tMin :: Int
     , tHour :: Int
     }
+    deriving Show
 
 sleep n = threadDelay (n * 10^6)
 
