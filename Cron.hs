@@ -15,4 +15,4 @@ cron time action = do
     currentTime <- getZonedTime
     action
     sleep 1
-    cron action
+    cron time action
