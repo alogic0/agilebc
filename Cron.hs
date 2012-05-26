@@ -34,7 +34,7 @@ cron :: String -> IO ()
 cron time = do
     let timeStruct = readEntry time
     currentTime <- getZonedTime
-    cron' currentTime time
+    cron' currentTime timeStruct
   where
   cron' currentTime timeStruct = do
     -- currentTime <- getZonedTime
