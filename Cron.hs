@@ -2,6 +2,8 @@ import Control.Concurrent
 import Data.Time
 import Data.Time.Lens
 import Control.Monad
+import Text.Regex.Applicative
+import Data.Char
 
 data Time a = MakeTime
     { tSec :: a
@@ -33,3 +35,7 @@ cron time action = do
     cron time action
 
 testTimeSpec = MakeTime Star (Num 56) (Num 12)
+
+-- Parsing
+number :: RE Char Int
+number = read <$> many (psym isDigit)
