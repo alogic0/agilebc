@@ -13,11 +13,15 @@ data Time = MakeTime
 sleep n = threadDelay (n * 10^6)
 
 checkTime :: ZonedTime -> Time -> Bool
+checkTime =
+    round (getL seconds currentTime) == tSec time &&
+    getL minutes currentTime == tMin time &&
+    getL hour currentTime == tHour time &&
 
 cron :: Time -> IO () -> IO ()
 cron time action = do
     currentTime <- getZonedTime
-    when (round (getL seconds currentTime) == tSec time) $
+    when () $
         action
     sleep 1
     cron time action
