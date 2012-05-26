@@ -12,6 +12,7 @@ data Time = MakeTime
 sleep n = threadDelay (n * 10^6)
 
 cron time action = do
+    currentTime <- getZonedTime
     action
     sleep 1
     cron action
