@@ -15,6 +15,8 @@ data NumOrStar = Num Int | Star
 sleep n = threadDelay (n * 10^6)
 
 (===) :: Int -> NumOrStar -> Bool
+n === Star = True
+n === Num m = n == m
 
 checkTime :: ZonedTime -> Time NumOrStar -> Bool
 checkTime currentTime time =
