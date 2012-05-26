@@ -16,7 +16,7 @@ checkTime :: ZonedTime -> Time -> Bool
 checkTime currentTime time =
     round (getL seconds currentTime) == tSec time &&
     getL minutes currentTime == tMin time &&
-    getL hour currentTime == tHour time
+    getL hours currentTime == tHour time
 
 cron :: Time -> IO () -> IO ()
 cron time action = do
