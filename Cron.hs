@@ -12,6 +12,9 @@ data Time = MakeTime
 
 sleep n = threadDelay (n * 10^6)
 
+checkTime 
+
+cron :: Time -> IO () -> IO ()
 cron time action = do
     currentTime <- getZonedTime
     when (round (getL seconds currentTime) == tSec time) $
