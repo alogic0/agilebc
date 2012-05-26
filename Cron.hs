@@ -1,6 +1,6 @@
 import Control.Concurrent
 
-data Time = Time
+data Time = MakeTime
     { tSec :: Int
     , tMin :: Int
     , tHour :: Int
